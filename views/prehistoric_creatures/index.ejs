@@ -1,5 +1,10 @@
 <ul>
-    <% preCre.forEach(creature=>{ %>
+    <% preCre.forEach((creature,id)=>{ %>
     <li> <%=creature.type%></li>
+    <form method="post" action="prehistoric_creatures/<%=id%>/?_method=DELETE">
+        <input type="submit" value="delete creature">
+        <button><a href="/prehistoric_creatures/edit/<%=id%>">edit creature</a></button>
+
+     </form>
     <%})%>
    </ul>
