@@ -6,6 +6,10 @@ const fs = require("fs")
 router.get("/",(req,res)=>{
     let iniDate = fs.readFileSync('dinosaurs.json');
     let myDinos = JSON.parse(iniDate)
+    let nameFilter = req.query.nameFilter;
+    if(nameFilter){
+      myDinos = myDinos.filter(ele=>ele.name==nameFilter)
+    }
     res.render("dinosaurs/index",{dinos: myDinos})
 })
 router.get('/new', (req, res) => {

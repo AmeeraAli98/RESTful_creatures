@@ -1,4 +1,8 @@
-
+<form method="GET" action="/dinosaurs">
+   <lable for="nameFilter">Filter by name</lable>
+   <input type="text" name="nameFilter" id="nameFilter"/>
+   <button type="submit">Filter<button>
+</form>
 
 <ul>
  <% dinos.forEach((dino,idx)=>{ %>
